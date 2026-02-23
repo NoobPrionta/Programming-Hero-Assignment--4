@@ -34,7 +34,9 @@ function renderJobs() {
   if (filteredJobs.length === 0) {
     jobsContainer.innerHTML = `
       <div class="text-center py-16 text-gray-500">
-        <div class="text-5xl mb-4">📄</div>
+        <div class="flex justify-center mb-4">
+  <img src="jobs.png" alt="No Jobs" class="w-24 opacity-70">
+</div>
         <h3 class="text-lg font-semibold">No jobs available</h3>
         <p>Check back soon for new job opportunities</p>
       </div>
