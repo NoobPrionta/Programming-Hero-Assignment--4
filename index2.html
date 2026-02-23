@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Tracker</title>
+
+  <!-- Tailwind v4 Browser -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <div class="max-w-[1100px] mx-auto p-6">
+
+    <!-- Title -->
+    <h1 class="text-3xl font-bold mb-8">
+      Job Application Tracker
+    </h1>
+
+    <!-- Dashboard -->
+    <div class="grid gap-6 md:grid-cols-3 mb-8">
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <p class="text-gray-500 mb-2">Total</p>
+        <h2 id="totalCount" class="text-2xl font-semibold">8</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <p class="text-gray-500 mb-2">Interview</p>
+        <h2 id="interviewCount" class="text-2xl font-semibold text-green-600">0</h2>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl shadow">
+        <p class="text-gray-500 mb-2">Rejected</p>
+        <h2 id="rejectedCount" class="text-2xl font-semibold text-red-600">0</h2>
+      </div>
+
+    </div>
+
+    <!-- Job Section -->
+    <div class="bg-white p-6 rounded-xl shadow">
+
+      <div class="flex justify-between items-center mb-4 flex-wrap gap-2">
+        <h2 class="text-xl font-semibold">Available Jobs</h2>
+        <span id="tabCount" class="text-sm text-gray-500">8 jobs</span>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex flex-wrap gap-3 mb-6">
+        <button class="tab px-4 py-2 rounded-md text-sm bg-blue-600 text-white">
+          All
+        </button>
+
+        <button class="tab px-4 py-2 rounded-md text-sm bg-gray-200 hover:bg-gray-300">
+          Interview
+        </button>
+
+        <button class="tab px-4 py-2 rounded-md text-sm bg-gray-200 hover:bg-gray-300">
+          Rejected
+        </button>
+      </div>
+
+      <!-- Jobs -->
+      <div id="jobsContainer" class="grid gap-6">
+        <!-- JS will render jobs here -->
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
