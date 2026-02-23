@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Job Application Tracker</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body class="bg-slate-100 min-h-screen">
@@ -50,6 +51,7 @@
             Rejected
         </button>
     </div>
+    <hr class="mb-10 border-3xl border-[#E6E7E9]">
 
     <!-- JOB CONTAINER -->
     <div id="jobContainer" class="space-y-6">
@@ -59,15 +61,23 @@
         <!-- 1 -->
         <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
             <h2 class="text-xl font-semibold">Mobile First Corp</h2>
+            
             <p class="text-gray-600">React Native Developer</p>
             <div class="mt-3">
+                <p class="text-[#323B49] mb-4">Remote
+ • 
+Full-time 
+•
+ $130,000 - $175,000</p>
                 <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
                     NOT APPLIED
                 </span>
+                <p class="my-4 text-[#323B49]">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+                
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
@@ -81,8 +91,8 @@
                 </span>
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
@@ -96,8 +106,8 @@
                 </span>
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
@@ -111,8 +121,8 @@
                 </span>
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
@@ -126,8 +136,8 @@
                 </span>
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
@@ -141,8 +151,8 @@
                 </span>
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
@@ -156,8 +166,8 @@
                 </span>
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
@@ -171,8 +181,8 @@
                 </span>
             </div>
             <div class="mt-4 flex gap-3">
-                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded">Interview</button>
-                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded">Rejected</button>
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded cursor-pointer">Interview</button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded cursor-pointer">Rejected</button>
             </div>
         </div>
 
