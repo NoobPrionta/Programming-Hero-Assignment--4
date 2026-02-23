@@ -10,7 +10,6 @@ const jobs = [
   { id: 8, company: "Spotify", position: "Web Developer", location: "Remote", type: "Part-time", salary: "$90k", description: "Music platform web app.", status: null }
 ];
 
-// ===== VARIABLES =====
 let currentTab = "all";
 
 const jobsContainer = document.getElementById("jobsContainer");
@@ -32,7 +31,6 @@ function renderJobs() {
 
   tabCount.innerText = filteredJobs.length + " jobs";
 
-  // ===== EMPTY STATE =====
   if (filteredJobs.length === 0) {
     jobsContainer.innerHTML = `
       <div class="text-center py-16 text-gray-500">
@@ -44,27 +42,17 @@ function renderJobs() {
     return;
   }
 
-  // ===== CREATE JOB CARDS =====
   filteredJobs.forEach(job => {
 
     const card = document.createElement("div");
     card.className = "bg-white border border-gray-200 p-5 rounded-xl hover:shadow-md transition";
 
-    // ===== STATUS BADGE =====
     let badge = "";
     if (job.status === "interview") {
-      badge = `
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-600 mb-3">
-          Interview
-        </span>
-      `;
+      badge = `<span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-600 mb-3">Interview</span>`;
     } 
     else if (job.status === "rejected") {
-      badge = `
-        <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-600 mb-3">
-          Rejected
-        </span>
-      `;
+      badge = `<span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-red-100 text-red-600 mb-3">Rejected</span>`;
     }
 
     card.innerHTML = `
@@ -74,9 +62,7 @@ function renderJobs() {
         ${job.location} • ${job.type} • ${job.salary}
       </p>
       <p class="text-sm mb-3">${job.description}</p>
-
       ${badge}
-
       <div class="flex gap-3 mt-3">
         <button class="interviewBtn px-3 py-1 rounded-md text-sm transition 
           ${job.status === "interview"
@@ -84,7 +70,6 @@ function renderJobs() {
             : "bg-green-50 text-green-600 hover:bg-green-100"}">
           Interview
         </button>
-
         <button class="rejectedBtn px-3 py-1 rounded-md text-sm transition
           ${job.status === "rejected"
             ? "bg-red-600 text-white"
@@ -94,7 +79,6 @@ function renderJobs() {
       </div>
     `;
 
-    // ===== BUTTON EVENTS =====
     const interviewBtn = card.querySelector(".interviewBtn");
     const rejectedBtn = card.querySelector(".rejectedBtn");
 
@@ -115,13 +99,10 @@ function renderJobs() {
 }
 
 
-// ===== UPDATE DASHBOARD COUNTS =====
+// ===== UPDATE COUNTS =====
 function updateCounts() {
-  const interviewJobs = jobs.filter(job => job.status === "interview").length;
-  const rejectedJobs = jobs.filter(job => job.status === "rejected").length;
-
-  interviewCount.innerText = interviewJobs;
-  rejectedCount.innerText = rejectedJobs;
+  interviewCount.innerText = jobs.filter(j => j.status === "interview").length;
+  rejectedCount.innerText = jobs.filter(j => j.status === "rejected").length;
   totalCount.innerText = jobs.length;
 }
 
@@ -131,18 +112,15 @@ document.querySelectorAll(".tab").forEach(tab => {
 
   tab.addEventListener("click", () => {
 
-    // Reset all tabs
     document.querySelectorAll(".tab").forEach(t => {
       t.classList.remove("bg-blue-600", "text-white");
       t.classList.add("bg-gray-200");
     });
 
-    // Activate clicked tab
     tab.classList.remove("bg-gray-200");
     tab.classList.add("bg-blue-600", "text-white");
 
-    currentTab = tab.dataset.tab;
-
+    currentTab = tab.dataset.tab; // already lowercase in HTML
     renderJobs();
   });
 
