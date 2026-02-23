@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Application Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen">
+
+<div class="max-w-6xl mx-auto p-6">
+
+    <!-- ================= HEADER ================= -->
+    <h1 class="text-3xl font-bold text-slate-800 mb-6">
+        Job Application Tracker
+    </h1>
+
+    <!-- ================= STATS ================= -->
+    <div class="grid grid-cols-3 gap-4 mb-8">
+        <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-500">Total</p>
+            <p id="totalCount" class="text-2xl font-bold text-blue-600">8</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-500">Interview</p>
+            <p id="interviewCount" class="text-2xl font-bold text-green-600">0</p>
+        </div>
+
+        <div class="bg-white p-4 rounded-lg shadow">
+            <p class="text-sm text-gray-500">Rejected</p>
+            <p id="rejectedCount" class="text-2xl font-bold text-red-600">0</p>
+        </div>
+    </div>
+
+    <!-- ================= FILTER ================= -->
+    <div class="flex gap-3 mb-6">
+        <button data-filter="all"
+            class="filter-btn bg-blue-600 text-white px-4 py-2 rounded">
+            All
+        </button>
+
+        <button data-filter="interview"
+            class="filter-btn bg-gray-200 px-4 py-2 rounded">
+            Interview
+        </button>
+
+        <button data-filter="rejected"
+            class="filter-btn bg-gray-200 px-4 py-2 rounded">
+            Rejected
+        </button>
+    </div>
+
+    <!-- ================= JOB CONTAINER ================= -->
+    <div id="jobContainer" class="space-y-6">
+
+        <!-- ================= JOB CARD TEMPLATE ================= -->
+
+        <!-- 1 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+
+            <h2 class="text-xl font-semibold">Mobile First Corp</h2>
+            <p class="text-gray-600">React Native Developer</p>
+            <p class="text-sm text-gray-500 mt-1">
+                Remote • Full-time • $130,000 - $175,000
+            </p>
+
+            <!-- Badge -->
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <!-- Buttons -->
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+            <h2 class="text-xl font-semibold">WebFlow Agency</h2>
+            <p class="text-gray-600">Web Designer & Developer</p>
+            <p class="text-sm text-gray-500 mt-1">
+                Los Angeles • Part-time • $80,000 - $120,000
+            </p>
+
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+            <h2 class="text-xl font-semibold">DataViz Solutions</h2>
+            <p class="text-gray-600">Data Visualization Specialist</p>
+            <p class="text-sm text-gray-500 mt-1">
+                Boston • Full-time • $125,000 - $165,000
+            </p>
+
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+            <h2 class="text-xl font-semibold">CloudFirst Inc</h2>
+            <p class="text-gray-600">Backend Developer</p>
+            <p class="text-sm text-gray-500 mt-1">
+                Seattle • Full-time • $140,000 - $190,000
+            </p>
+
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+            <h2 class="text-xl font-semibold">Innovation Labs</h2>
+            <p class="text-gray-600">UI/UX Engineer</p>
+            <p class="text-sm text-gray-500 mt-1">
+                Austin • Full-time • $110,000 - $150,000
+            </p>
+
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+            <h2 class="text-xl font-semibold">MegaCorp Solutions</h2>
+            <p class="text-gray-600">JavaScript Developer</p>
+            <p class="text-sm text-gray-500 mt-1">
+                New York • Full-time • $130,000 - $170,000
+            </p>
+
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+            <h2 class="text-xl font-semibold">StartupXYZ</h2>
+            <p class="text-gray-600">Full Stack Engineer</p>
+            <p class="text-sm text-gray-500 mt-1">
+                Remote • Full-time • $120,000 - $160,000
+            </p>
+
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="job-card bg-white p-6 rounded-lg shadow" data-status="not-applied">
+            <h2 class="text-xl font-semibold">TechCorp Industries</h2>
+            <p class="text-gray-600">Senior Frontend Developer</p>
+            <p class="text-sm text-gray-500 mt-1">
+                San Francisco • Full-time • $130,000 - $175,000
+            </p>
+
+            <div class="mt-3">
+                <span class="status-badge px-3 py-1 rounded bg-gray-200 text-gray-700 text-sm">
+                    NOT APPLIED
+                </span>
+            </div>
+
+            <div class="mt-4 flex gap-3">
+                <button class="interview-btn px-4 py-2 border border-green-500 text-green-600 rounded hover:bg-green-50">
+                    Interview
+                </button>
+                <button class="rejected-btn px-4 py-2 border border-red-500 text-red-600 rounded hover:bg-red-50">
+                    Rejected
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- EMPTY STATE -->
+    <div id="emptyState"
+         class="hidden text-center bg-white p-12 rounded-lg shadow mt-6">
+
+        <div class="text-5xl mb-4">📄</div>
+        <h2 class="text-xl font-semibold text-slate-700">
+            No jobs available
+        </h2>
+        <p class="text-gray-500 mt-2">
+            Check back soon for new job opportunities
+        </p>
+    </div>
+
+</div>
+
+<script src="script2.js"></script>
+</body>
+</html>
